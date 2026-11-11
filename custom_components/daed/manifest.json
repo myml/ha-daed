@@ -1,6 +1,9 @@
 {
   "domain": "daed",
   "name": "daed",
+  "categories": [
+    "computers_network.routers_network"
+  ],
   "codeowners": [
     "@myml"
   ],
@@ -13,5 +16,5 @@
     "custom_components.daed"
   ],
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
