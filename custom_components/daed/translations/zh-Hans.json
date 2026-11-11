@@ -1,0 +1,133 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "daed",
+        "description": "连接到管理 dae 透明代理的 daed 面板。",
+        "data": {
+          "base_url": "daed 地址",
+          "username": "用户名",
+          "password": "密码",
+          "verify_ssl": "校验 SSL 证书"
+        },
+        "data_description": {
+          "base_url": "例如 http://10.0.0.1:2023",
+          "username": "daed 面板的登录账户。",
+          "password": "daed 面板的登录密码。"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新认证",
+        "description": "{base_url} 上的 daed 拒绝了已保存的凭据，请输入当前凭据。",
+        "data": {
+          "username": "用户名",
+          "password": "密码"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "URL 无效。",
+      "invalid_auth": "用户名或密码错误。",
+      "cannot_connect": "无法连接到 daed，请检查地址以及 daed 是否在运行。",
+      "unknown": "未知错误。"
+    },
+    "abort": {
+      "already_configured": "该 daed 实例已配置。",
+      "reauth_successful": "重新认证成功。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "daed 选项",
+        "data": {
+          "scan_interval_seconds": "运行状态轮询间隔",
+          "latency_interval_seconds": "节点延迟轮询间隔"
+        },
+        "data_description": {
+          "scan_interval_seconds": "实时流量与 dae 状态的读取频率。",
+          "latency_interval_seconds": "设为 0 则只通过 daed.test_node_latency 动作刷新节点延迟。"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "download_rate": {
+        "name": "下载速率"
+      },
+      "upload_rate": {
+        "name": "上传速率"
+      },
+      "download_total": {
+        "name": "累计下载"
+      },
+      "upload_total": {
+        "name": "累计上传"
+      },
+      "active_connections": {
+        "name": "活跃连接"
+      },
+      "udp_sessions": {
+        "name": "UDP 会话"
+      },
+      "group_count": {
+        "name": "分组数"
+      },
+      "subscription_count": {
+        "name": "订阅数"
+      },
+      "version": {
+        "name": "版本"
+      },
+      "config": {
+        "name": "配置"
+      },
+      "group_nodes": {
+        "name": "分组 {name} 节点数"
+      },
+      "subscription_status": {
+        "name": "订阅 {name}",
+        "state": {
+          "ok": "正常",
+          "error": "错误"
+        }
+      },
+      "node_latency": {
+        "name": "节点 {name} 延迟"
+      }
+    },
+    "binary_sensor": {
+      "running": {
+        "name": "dae 运行中"
+      },
+      "config_modified": {
+        "name": "配置已修改"
+      },
+      "subscription_errors": {
+        "name": "订阅存在错误"
+      },
+      "node_alive": {
+        "name": "节点 {name} 可达"
+      }
+    }
+  },
+  "services": {
+    "run": {
+      "name": "应用配置",
+      "description": "在 dae 中应用当前选中的配置。"
+    },
+    "test_node_latency": {
+      "name": "测试节点延迟",
+      "description": "让 daed 重新探测所有节点并刷新延迟实体。"
+    },
+    "update_subscriptions": {
+      "name": "更新订阅",
+      "description": "从订阅地址刷新指定的订阅。"
+    },
+    "select_config": {
+      "name": "选择配置",
+      "description": "选中一个已保存的 daed 配置。"
+    }
+  }
+}

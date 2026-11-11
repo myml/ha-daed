@@ -1,0 +1,17 @@
+{
+  "domain": "daed",
+  "name": "daed",
+  "codeowners": [
+    "@myml"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/myml/ha-daed",
+  "integration_type": "service",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/myml/ha-daed/issues",
+  "loggers": [
+    "custom_components.daed"
+  ],
+  "requirements": [],
+  "version": "0.1.0"
+}

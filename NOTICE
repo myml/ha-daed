@@ -1,0 +1,8 @@
+daed for Home Assistant
+Copyright 2026 myml
+
+This product talks to the daed GraphQL API, produced by the daeuniverse
+project (https://github.com/daeuniverse/daed), which is licensed under the
+MIT License, and drives the dae transparent proxy
+(https://github.com/daeuniverse/dae), which is licensed under the
+AGPL-3.0 License. It contains no code copied from either project.

@@ -1,0 +1,133 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "daed",
+        "description": "Connect to the daed web dashboard that manages your dae transparent proxy.",
+        "data": {
+          "base_url": "daed base URL",
+          "username": "Username",
+          "password": "Password",
+          "verify_ssl": "Verify SSL certificate"
+        },
+        "data_description": {
+          "base_url": "For example http://10.0.0.1:2023",
+          "username": "The daed dashboard account.",
+          "password": "The daed dashboard password."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate",
+        "description": "daed at {base_url} rejected the stored credentials. Enter the current ones.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "The URL is not valid.",
+      "invalid_auth": "The username or password is incorrect.",
+      "cannot_connect": "Could not connect to daed. Check the URL and that daed is running.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This daed instance is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "daed options",
+        "data": {
+          "scan_interval_seconds": "Runtime poll interval",
+          "latency_interval_seconds": "Node latency poll interval"
+        },
+        "data_description": {
+          "scan_interval_seconds": "How often the live traffic counters and dae state are read.",
+          "latency_interval_seconds": "Set to 0 to only refresh node latency through the daed.test_node_latency action."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "download_rate": {
+        "name": "Download rate"
+      },
+      "upload_rate": {
+        "name": "Upload rate"
+      },
+      "download_total": {
+        "name": "Downloaded"
+      },
+      "upload_total": {
+        "name": "Uploaded"
+      },
+      "active_connections": {
+        "name": "Active connections"
+      },
+      "udp_sessions": {
+        "name": "UDP sessions"
+      },
+      "group_count": {
+        "name": "Groups"
+      },
+      "subscription_count": {
+        "name": "Subscriptions"
+      },
+      "version": {
+        "name": "Version"
+      },
+      "config": {
+        "name": "Config"
+      },
+      "group_nodes": {
+        "name": "Group {name} nodes"
+      },
+      "subscription_status": {
+        "name": "Subscription {name}",
+        "state": {
+          "ok": "OK",
+          "error": "Error"
+        }
+      },
+      "node_latency": {
+        "name": "Node {name} latency"
+      }
+    },
+    "binary_sensor": {
+      "running": {
+        "name": "dae running"
+      },
+      "config_modified": {
+        "name": "Config modified"
+      },
+      "subscription_errors": {
+        "name": "Subscription errors"
+      },
+      "node_alive": {
+        "name": "Node {name} reachable"
+      }
+    }
+  },
+  "services": {
+    "run": {
+      "name": "Apply config",
+      "description": "Apply the selected config in dae."
+    },
+    "test_node_latency": {
+      "name": "Test node latency",
+      "description": "Ask daed to dial every node again and refresh the latency entities."
+    },
+    "update_subscriptions": {
+      "name": "Update subscriptions",
+      "description": "Refresh the given subscriptions from their URL."
+    },
+    "select_config": {
+      "name": "Select config",
+      "description": "Select a saved daed config."
+    }
+  }
+}

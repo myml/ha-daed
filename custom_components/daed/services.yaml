@@ -1,0 +1,38 @@
+run:
+  fields:
+    entry_id:
+      required: false
+      selector:
+        config_entry:
+          integration: daed
+test_node_latency:
+  fields:
+    entry_id:
+      required: false
+      selector:
+        config_entry:
+          integration: daed
+update_subscriptions:
+  fields:
+    entry_id:
+      required: false
+      selector:
+        config_entry:
+          integration: daed
+    subscription_ids:
+      required: false
+      example: '["Y3Vyc29yMQ"]'
+      selector:
+        object:
+select_config:
+  fields:
+    entry_id:
+      required: false
+      selector:
+        config_entry:
+          integration: daed
+    config_id:
+      required: true
+      example: "Y3Vyc29yMQ"
+      selector:
+        text:

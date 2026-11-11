@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments used to reproduce CI on another HA version
+.venv/
+.venv-*/
+
+# Home Assistant
+config/
+.storage/
+home-assistant.log*
+home-assistant_v2.db*
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Tooling
+.ruff_cache/
